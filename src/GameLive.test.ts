@@ -20,17 +20,6 @@ describe("GameLive class tests", () => {
     return grid;
   }
 
-  function setEventProperty(
-    event: Event,
-    propertyName: string,
-    propertyValue: HTMLElement,
-  ) {
-    Object.defineProperty(event, propertyName, {
-      value: propertyValue,
-      configurable: true,
-    });
-  }
-
   it("Constructor tests", () => {
     const grid = getGrid(5, 5);
     const cell = grid[0][0];
@@ -207,5 +196,4 @@ describe("GameLive class tests", () => {
       expect(gameLive.getCell(x, y)).toBe(gameLive.grid[expectY][expectX]);
     },
   );
-  
 });

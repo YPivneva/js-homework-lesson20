@@ -106,8 +106,6 @@ describe("MainApp class tests", () => {
 
   it("Check start function", () => {
     let game = new GameLive(getContainer(), 40, 25, false);
-    game.insertFigure(game.grid[0][0], FIGURES.GOSPER_GLIDER_GUN.coordinates);
-    game.insertFigure(game.grid[20][34], FIGURES.EATER_1.coordinates);
 
     mainApp.start();
 
@@ -167,7 +165,7 @@ describe("MainApp class tests", () => {
   it("Check startButtonClick function", () => {
     mainApp.gameStart = jest.fn();
     mainApp.gameStop = jest.fn();
-    
+
     mainApp.start();
     mainApp.startButtonClick();
 
@@ -177,7 +175,7 @@ describe("MainApp class tests", () => {
     expect(mainApp.startButton.innerText).toBe("Стоп");
     expect(mainApp.nextTicButton.disabled).toBeTruthy();
     expect(mainApp.gridButton.disabled).toBeTruthy();
-    
+
     mainApp.startButtonClick();
 
     expect(rootElement.classList).not.toContain("run");
@@ -186,7 +184,6 @@ describe("MainApp class tests", () => {
     expect(mainApp.startButton.innerText).toBe("Старт");
     expect(mainApp.nextTicButton.disabled).not.toBeTruthy();
     expect(mainApp.gridButton.disabled).not.toBeTruthy();
-    
   });
 
   it("Check gameStart and gameStop function", () => {

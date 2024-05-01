@@ -204,41 +204,4 @@ export default class GameLive {
       this.cellUpdateCheck(cell);
     });
   }
-
-  showFigure(figure: Figure) {
-    const onMouseover = (event: MouseEvent) => {
-      if (!this.currentHoverCell) {
-        const element = event.target as HTMLElement;
-        this.currentHoverCell = this.getCell(
-          Number(element.getAttribute("coor-x")),
-          Number(element.getAttribute("coor-y")),
-        );
-        this.insertFigure(this.currentHoverCell, figure.coordinates);
-      }
-    };
-
-    const onMouseout = (event: MouseEvent) => {
-      if (this.currentHoverCell) {
-        this.deleteFigure(this.currentHoverCell, figure.coordinates);
-        const element = event.relatedTarget as HTMLElement;
-        this.currentHoverCell = this.getCell(
-          Number(element.getAttribute("coor-x")),
-          Number(element.getAttribute("coor-y")),
-        );
-        this.insertFigure(this.currentHoverCell, figure.coordinates);
-      }
-    };
-
-    const stopShowing = () => {
-      this.container.removeEventListener("mouseover", onMouseover);
-      this.container.removeEventListener("mouseout", onMouseout);
-      this.currentHoverCell = undefined;
-    };
-
-    this.container.addEventListener("mouseover", onMouseover);
-
-    this.container.addEventListener("mouseout", onMouseout);
-
-    return stopShowing;
-  }
 }

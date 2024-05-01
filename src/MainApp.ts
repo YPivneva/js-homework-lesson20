@@ -193,7 +193,6 @@ export default class MainApp {
         this.gameStart();
       }
     });
-    
   }
 
   startButtonClick() {
