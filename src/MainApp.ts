@@ -181,7 +181,7 @@ export default class MainApp {
         this.heightInput.value,
       );
 
-      this.gameLive.fillGrid(
+      this.gameLive.getGrid(
         Number(this.widthInput.value),
         Number(this.heightInput.value),
       );
