@@ -43,7 +43,7 @@ describe("GameLive class tests", () => {
   });
 
   it("check fillGrid function", () => {
-    gameLive.fillGrid(10, 10);
+    gameLive.getGrid(10, 10);
     expect(gameLive.grid).toStrictEqual(getGrid(10, 10));
   });
 
@@ -75,7 +75,7 @@ describe("GameLive class tests", () => {
       row.forEach((cell) => div.appendChild(cell.cellElement)),
     );
 
-    gameLive.fillGrid(10, 10);
+    gameLive.getGrid(10, 10);
     gameLive.showGrid();
 
     expect(rootElement.innerHTML).toBe(div.innerHTML);

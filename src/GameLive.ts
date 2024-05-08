@@ -29,7 +29,7 @@ export default class GameLive {
     this.height = height;
     this.markable = markable ?? false;
 
-    this.fillGrid();
+    this.getGrid();
 
     this.container.addEventListener("click", (event) => {
       if (event.target instanceof HTMLElement && !this.currentHoverCell) {
@@ -45,7 +45,7 @@ export default class GameLive {
     });
   }
 
-  fillGrid(width?: number, height?: number) {
+  getGrid(width?: number, height?: number) {
     this.cellToMark.clear();
     this.cellToChangeNextTic.clear();
     this.grid = [];
